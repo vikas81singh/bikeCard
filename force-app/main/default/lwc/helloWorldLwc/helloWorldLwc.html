@@ -1,0 +1,18 @@
+<template>
+    <h1>Hello, World! 🚀</h1>
+    <template if:true={isVisible}>
+        <p>Shown only when isVisible = true</p>
+    </template>
+    <c-child message={messagetochild}  onsendmsg={handleMessage}></c-child>
+
+
+    <template if:true={accounts.data}>
+        <template for:each={accounts.data} for:item="acc">
+            <p key={acc.Id}>{acc.Name}</p>
+        </template>
+    </template>
+    <template if:true={accounts.error}>
+        <p>Error loading accounts</p>
+    </template>
+
+</template>
